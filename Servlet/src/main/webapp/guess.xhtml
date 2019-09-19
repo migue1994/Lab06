@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+	
+	
+    <h:body>
+    	<h:form id="guess_form">  
+    		
+            <h1>Guess the number!</h1>
+            <p:outputLabel  value="valor: #{guessBean.guessNum}" style="display: none"/>
+            <br/>
+    		<p:inputText id ="number" value="#{guessBean.guessUser}" />
+			<p:commandButton value="Submit" update="guess_form" actionListener="#{guessBean.guess}"></p:commandButton>
+
+    		<br/><br/>
+    		<p:outputLabel  value="Intentos: #{guessBean.intentos}"/>
+    		<br/>
+    		<p:outputLabel  value="Estado: #{guessBean.estado}"/>
+    		<br/>
+    		<p:outputLabel  value="Puntaje: #{guessBean.premio}"/>
+    		<br/><br/>
+    		<h:dataTable value="#{guessBean.listaIntentos}" var="dato">
+    			<h:column>
+         			<f:facet name="header">
+          				<h:outputText value="Valores Intentados "></h:outputText>
+          				<br/>
+         			</f:facet>
+         			<h:outputText value="#{dato}"></h:outputText>
+      			</h:column>
+    		</h:dataTable>
+    		<br/><br/>
+			<p:commandButton value="Restart" update="guess_form" actionListener="#{guessBean.restart}"></p:commandButton>
+			
+			
+    		
+    	</h:form>   
+    </h:body>
+</html>
