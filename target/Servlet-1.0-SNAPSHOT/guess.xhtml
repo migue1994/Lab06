@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+
+	<style>
+		body {
+  			background-color: #4150d427;
+		}
+		h1 {
+			font-family: Georgia, serif;
+			font-size: 27px;
+			letter-spacing: 0px;
+			word-spacing: 2px;
+			color: #3E6EFF;
+			font-weight: 400;
+			text-decoration: none solid rgb(68, 68, 68);
+			font-style: italic;
+			font-variant: normal;
+			text-transform: none;
+		}
+		.tipoLetra{
+			font-family: "Comic Sans MS", cursive, sans-serif;
+			font-size: 18px;
+			letter-spacing: 0.2px;
+			word-spacing: 2px;
+			color: #3E6EFF;
+			font-weight: 400;
+			text-decoration: none solid rgb(68, 68, 68);
+			font-style: italic;
+			font-variant: normal;
+			text-transform: none;
+		}
+		form{
+			padding:100px;
+			display:block;
+			width:600px;
+			margin: 0 auto;
+			text-align:center;
+		} 
+		.centrar{
+			display: block;
+			text-align: center;
+		}
+		.order-table{   
+			border-collapse:collapse;
+			
+		}
+
+		.order-table-header{
+			text-align:center;
+			background:none;
+			border-bottom:1px solid rgb(0, 0, 0);
+		}
+
+		.order-table-odd-row{
+			text-align:center;
+			background: none;
+			border-top:1px solid rgb(0, 0, 0);
+		}
+
+		.order-table-even-row{
+			text-align:center;
+			background:none;
+			border-top:1px solid rgb(0, 0, 0);
+		}
+	</style>
+	
+    <h:body>
+    	<h:form id="guess_form">  
+    		
+            <h1>Guess the number!</h1>
+            <p:outputLabel value="valor: #{guessBean.guessNum}" style="display: none"/>
+            <br/>
+    		<p:inputText id ="number" value="#{guessBean.guessUser}" style="text-align: center;"/>
+			<p:commandButton value="Submit" update="guess_form" actionListener="#{guessBean.guess}"></p:commandButton>
+
+    		<br/><br/>
+    		<p:outputLabel  value="Intentos: #{guessBean.intentos}" class="centrar, tipoLetra" />
+    		<br/>
+    		<p:outputLabel  value="Estado: #{guessBean.estado}"  class="centrar, tipoLetra"/>
+    		<br/>
+    		<p:outputLabel  value="Puntaje: #{guessBean.premio}"  class="centrar, tipoLetra"/>
+    		<br/><br/>
+			<h:dataTable value="#{guessBean.listaIntentos}" var="dato" style="margin: auto; color: blueviolet; font-style: italic;"
+			
+				styleClass="order-table"
+				headerClass="order-table-header"
+				rowClasses="order-table-odd-row,order-table-even-row">
+    			<h:column>
+         			<f:facet name="header">
+          				Valores Intentados
+          				<br/>
+         			</f:facet>
+         			#{dato}
+      			</h:column>
+    		</h:dataTable>
+    		<br/><br/>
+			<p:commandButton value="Restart" update="guess_form" actionListener="#{guessBean.restart}"></p:commandButton>
+			    		
+    	</h:form>   
+    </h:body>
+</html>
