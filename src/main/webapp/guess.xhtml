@@ -4,17 +4,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"      
       xmlns:h="http://java.sun.com/jsf/html"
+
       xmlns:p="http://primefaces.org/ui">
 	
 	<h:head>
 		<link rel="stylesheet" type="text/css" href="guess.css" />
 		<h1>Guess the number!</h1>
 	</h:head>
+
 	
     <h:body>
     	
     	<h:form id="guess_form">  
     		
+
             <p:outputLabel  value="valor: #{guessBean.guessNum}" style="display: none"/>
             
             <br/>
@@ -46,12 +49,9 @@
     		</div>
     		
     		<br/><br/>
-    		
     		<div style="text-align: center">
 				<p:commandButton value="Restart" update="guess_form" actionListener="#{guessBean.restart}"></p:commandButton>
-			</div>
-			
-    		
+			</div>	
     	</h:form>   
     </h:body>
 </html>

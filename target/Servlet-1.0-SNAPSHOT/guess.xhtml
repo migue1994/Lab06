@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+
+      xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<link rel="stylesheet" type="text/css" href="guess.css" />
+		<h1>Guess the number!</h1>
+	</h:head>
+
+	
+    <h:body>
+    	
+    	<h:form id="guess_form">  
+    		
+
+            <p:outputLabel  value="valor: #{guessBean.guessNum}" style="display: none"/>
+            
+            <br/>
+            
+            <div style="text-align: center">
+    			<p:inputText id ="number" value="#{guessBean.guessUser}"/>
+				<p:commandButton id= "submit" value="Submit" update="guess_form" 
+				 actionListener="#{guessBean.guess}"></p:commandButton>
+			</div>
+    		<br/><br/>
+    		
+    		<p> 
+    			<b>Intentos: </b> <p:outputLabel  value="#{guessBean.intentos}" /> &nbsp;
+    			<b>Estado: </b> <p:outputLabel value="#{guessBean.estado}"/> &nbsp;
+    			<b>Puntaje: </b><p:outputLabel  value="#{guessBean.premio}"/>
+    		</p>
+    		
+    		<br/>
+    		
+    		<div style="text-align: center" class='table'>
+    			<h:dataTable class="table-d"  value="#{guessBean.listaIntentos}" var="dato" style="margin: 0 auto;">
+    				<h:column>
+         				<f:facet name="header">
+          					<h2><h:outputText value="Valores Intentados "></h:outputText></h2>
+         				</f:facet>
+         				<h3><h:outputText value="#{dato}"></h:outputText></h3>
+      				</h:column>
+    			</h:dataTable>
+    		</div>
+    		
+    		<br/><br/>
+    		
+    		<div style="text-align: center">
+				<p:commandButton value="Restart" update="guess_form" actionListener="#{guessBean.restart}"></p:commandButton>
+			</div>
+			
+    		
+            <h1>Guess the number!</h1>
+            <p:outputLabel value="valor: #{guessBean.guessNum}" style="display: none"/>
+            <br/>
+    		<p:inputText id ="number" value="#{guessBean.guessUser}" style="text-align: center;"/>
+			<p:commandButton value="Submit" update="guess_form" actionListener="#{guessBean.guess}"></p:commandButton>
+
+    		<br/><br/>
+    		<p:outputLabel  value="Intentos: #{guessBean.intentos}" class="centrar, tipoLetra" />
+    		<br/>
+    		<p:outputLabel  value="Estado: #{guessBean.estado}"  class="centrar, tipoLetra"/>
+    		<br/>
+    		<p:outputLabel  value="Puntaje: #{guessBean.premio}"  class="centrar, tipoLetra"/>
+    		<br/><br/>
+			<h:dataTable value="#{guessBean.listaIntentos}" var="dato" style="margin: auto; color: blueviolet; font-style: italic;"
+			
+				styleClass="order-table"
+				headerClass="order-table-header"
+				rowClasses="order-table-odd-row,order-table-even-row">
+    			<h:column>
+         			<f:facet name="header">
+          				Valores Intentados
+          				<br/>
+         			</f:facet>
+         			#{dato}
+      			</h:column>
+    		</h:dataTable>
+    		<br/><br/>
+			<p:commandButton value="Restart" update="guess_form" actionListener="#{guessBean.restart}"></p:commandButton>
+			    		
+    	</h:form>   
+    </h:body>
+</html>

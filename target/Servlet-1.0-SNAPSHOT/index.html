@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <form name="loginForm" method="GET" action="todoServlet">
+        	<!-- <p>id: <input type="number" name="id"> <input type="submit" value="Enviar datos"></p> -->
+        	
+        	id: <input type="number" id="numb" name="id"/> <br/>
+        	<input type="submit" onclick="validate()" value="Submit"/>
+        	
+        	<p id="demo"></p>
+        	
+        	<script>
+        	function validate(){
+        		var x,text;
+        		x=document.getElementById("numb").value;
+        		if(x<1 || x>200){
+        			text="Input not valid";
+        		}
+        		else{
+        			text="Input OK";
+        			
+        		}
+        		document.getElementById("demo").innerHTML=text;
+        	}
+        	</script>
+        </form>
+    </body>
+</html>
+
