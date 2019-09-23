@@ -27,12 +27,12 @@ public class Guess {
 	}
 	
 	/**
-	 * Calcula un número aleatorio entre 1 y 100
+	 * Calcula un número aleatorio entre 1 y 1100000000
 	 * @return un número entero aleatorio
 	 */
 	private int randomNum() {
 		Random random = new Random(System.currentTimeMillis());
-		int num = random.nextInt(100)+1;
+		int num = random.nextInt(1100000000)+1;
 		random.setSeed(System.currentTimeMillis());	
 		return num;
 	}

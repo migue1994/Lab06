@@ -1,0 +1,111 @@
+body {
+  background-color:#fbf0b3;
+}
+
+h1{
+  color: white;
+  text-align: center;
+  font-size:3vw;
+  font-family: "Lato", "Helvetica", Helvetica, sans-serif ,"Century Gothic", Century Gothic, "Times New Roman", Times;
+}
+
+h2{
+  font-family:sans-serif;
+  font-size:1.2vw;
+  text-align:center;
+}
+
+h3{
+  font-family: arial;
+  font-size:1.2vw;
+  display: inline;	
+  font-weight:normal;
+  
+}
+
+outputlabel{
+	display: inline;	
+}
+
+p{
+	font-family: sans-serif;
+	white-space:nowrap;
+	font-size:1.2vw;	
+	text-align: center;
+	
+}
+
+/*Botón (2)*/
+.ui-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #e1dedf;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #e1dedf;
+	box-shadow:inset 0px 1px 0px 0px #e1dedf;
+	background-color:white;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	
+	/*Borde del botón*/
+	border:1px solid light-gray;
+	display:inline-block;
+	
+	/*texto del botón*/
+	color:salmon;
+	font-family:sans-serif;
+	font-size:15px;
+	font-weight:bold;
+
+	/*Tamaño*/
+	padding:0.1vw 0.5vw;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #fae9ed;	
+}
+
+/*Tabla*/
+
+/*Margen de tabla(largo)*/
+.table-d {
+  font-size: .70em;
+  border: 1px solid rgba(222,220,215,0.5);
+  /*Color de valores*/
+  color: #666;
+  border-collapse: collapse;
+ 
+}
+
+/*Margen de tabla(ancho)*/
+.table-d td, .table-d th {
+	padding: .3em;
+    border-bottom: 1px solid rgba(222,220,215,0.5); 
+}
+
+/*Parte de valores intentados*/
+.table-d th {
+    background: #f3d99b;
+    color: #fff;
+    font-weight: normal;
+    text-align: right; 
+}
+
+/*Tamaño mínimo*/
+.table-d {
+  min-width: 10vw; 
+}
+
+/*Tamaño (ancho) de tabla*/
+.table-d td:first-child {
+	background: #f7f0c6;
+    width: 15vw; 
+}
+
+/*Cambio de color*/
+.table-d tr:hover td:first-child {
+	background: #4150d427;
+    color: #fff; 
+}
+
+
+
+
+
+
